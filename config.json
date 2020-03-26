@@ -1,0 +1,21 @@
+{
+	"title": "Sample Glossary",
+	"header_text": "Sample Header",
+	"footer_text": "Sample Footer",
+	"single_phrase": "true",
+	"insert_term_image": "true",
+	"credits": "true",
+	"document_name": "glossary.docx",
+	"terms": [
+		"HTML",
+		"Intranet",
+		"Logout",
+		"Newsgroup",
+		"Phishing",
+		"Shareware",
+		"SMTP",
+		"Spooler",
+		"Spyware",
+		"Telnet"
+	]
+}
