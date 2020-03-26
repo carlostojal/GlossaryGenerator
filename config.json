@@ -5,5 +5,10 @@
 	"single_phrase": "true",
 	"insert_term_image": "true",
 	"credits": "true",
-	"document_name": "output/glossary.docx"
+	"output_path": "output",
+	"filename": "glossary",
+	"docx": "true",
+	"json": "true",
+	"csv": "true",
+	"txt": "true"
 }
