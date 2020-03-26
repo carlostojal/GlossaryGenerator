@@ -93,7 +93,7 @@ for term in terms:
             f = open(filename + ".csv", "a")
             f.write(text + "\n")
             f.close()
-        if config['txt'] == True:
+        if config['txt'] == "true":
             f = open(filename + ".txt", "a")
             f.write(text + "\n")
             f.close()

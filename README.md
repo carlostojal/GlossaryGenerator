@@ -1,5 +1,5 @@
 # GlossaryGenerator
-Glossary Generator that uses the DuckDuckGo Instant Answer API to generate a DOCX glossary.
+Glossary Generator that uses the DuckDuckGo Instant Answer API to generate a glossary in formats such as DOCX, JSON, CSV and TXT.
 
 ## How to use
 * Make sure you have Python 3.x installed.
@@ -29,11 +29,20 @@ All configuration is maintained in the file ```config.json```.
 
 ## Screenshots
 
-* Generated document
-![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/document.png)
+* Generated DOCX
+![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/docx.png)
+
+* Generated JSON
+![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/json.png)
+
+* Generated CSV
+![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/csv.png)
+
+* Generated TXT
+![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/txt.png)
 
 * Terms file
 ![Terms file](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/terms.png)
 
 * Script running
-![Script running](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/program.png)
+![Script running](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/script.png)
