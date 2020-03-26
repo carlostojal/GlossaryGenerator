@@ -5,5 +5,5 @@
 	"single_phrase": "true",
 	"insert_term_image": "true",
 	"credits": "true",
-	"document_name": "glossary.docx"
+	"document_name": "output/glossary.docx"
 }
