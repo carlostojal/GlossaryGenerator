@@ -27,5 +27,8 @@ All configuration is maintained in the file ```config.json```.
 * Generated document
 ![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/document.png)
 
+* Terms file
+![Terms file](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/terms.png)
+
 * Script running
 ![Script running](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/program.png)
