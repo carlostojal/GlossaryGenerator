@@ -14,9 +14,3 @@ All configuration is maintained in the file ```config.json```.
 | ```credits``` | If ```true``` credits will be added to document footer. (**Default:** ```true```) |
 | ```document_name``` | Is the name of the file that will be generated. (**Default:** ```glossary.docx```) |
 | ```terms``` | Array containing all terms to include in the glossary. |
-
-## Screenshots
-
-![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/document.png)
-
-![Program](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/program.png)
