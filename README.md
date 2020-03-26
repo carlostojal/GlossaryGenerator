@@ -7,7 +7,7 @@ Glossary Generator that uses the DuckDuckGo Instant Answer API to generate a glo
 * Run ```setup.sh```. This will install all required modules. This is only needed once.
 * Write all terms in the file ```terms.txt```. Feel free to write your own script to populate this file.
 * Run the script ```glossary_generator.py```.
-* That's it! By default the glossary will be in the document ```glossary.docx``` in the folder ```output``` inside the script directory. You can change this in the configuration file. Configuration documentation below.
+* That's it! By default the glossary will be in the files in the folder ```output``` inside the script directory. You can change this in the configuration file. Configuration documentation below.
 
 ## Configuration
 All configuration is maintained in the file ```config.json```.
