@@ -21,3 +21,11 @@ All configuration is maintained in the file ```config.json```.
 | ```insert_term_image``` | if ```true``` a descriptive image of the term will be inserted. (**Default:** ```true```) |
 | ```credits``` | If ```true``` credits will be added to document footer. (**Default:** ```true```) |
 | ```document_name``` | Is the path of the file that will be generated. (**Default:** ```output/glossary.docx```) |
+
+## Screenshots
+
+* Generated document
+![Generated document](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/document.png)
+
+* Script running
+![Script running](https://raw.githubusercontent.com/carlostojal/GlossaryGenerator/master/img/program.png)
