@@ -20,4 +20,4 @@ All configuration is maintained in the file ```config.json```.
 | ```single_phrase``` | If ```true``` only the first phrase of the search result will be inserted. (**Default:** ```true```) |
 | ```insert_term_image``` | if ```true``` a descriptive image of the term will be inserted. (**Default:** ```true```) |
 | ```credits``` | If ```true``` credits will be added to document footer. (**Default:** ```true```) |
-| ```document_name``` | Is the name of the file that will be generated. (**Default:** ```glossary.docx```) |
+| ```document_name``` | Is the path of the file that will be generated. (**Default:** ```output/glossary.docx```) |
