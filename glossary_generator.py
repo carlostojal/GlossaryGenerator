@@ -20,6 +20,13 @@ config = json.loads(f.read())
 f.close()
 print("Loaded configuration.\n")
 
+# loads terms from file "terms.txt"
+print("Loading terms...")
+f = open("terms.txt", "r")
+terms = f.read().split("\n")
+f.close()
+print("Loaded terms.\n")
+
 print("Generating glossary...\n")
 
 document = Document()
@@ -31,7 +38,7 @@ document.add_paragraph() # blank line
 
 print("Searching for terms...")
 
-for term in config['terms']:
+for term in terms:
     print("\nSearching for term \"" + term + "\"...")
     response = requests.get("https://api.duckduckgo.com/?q=" + term + "&format=json&pretty=1") # request DuckDuckGo API to get term definition
     search = json.loads(response.text)

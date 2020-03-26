@@ -1,0 +1,10 @@
+HTML
+Intranet
+Logout
+Newsgroup
+Phishing
+Shareware
+SMTP
+Spooler
+Spyware
+Telnet
