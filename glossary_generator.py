@@ -29,6 +29,15 @@ print("Loaded terms.\n")
 
 filename = config['output_path'] + "/" + config['filename']
 
+# creates files requested in configuration
+if config['docx'] == "true":
+    document = Document()
+
+    # adds title do document
+    document.add_heading(config['title'], level = 0)
+
+    document.add_paragraph() # blank line
+
 if config['json'] == "true":
     glossary = {}
     f = open(filename + ".json", "w")
@@ -45,16 +54,7 @@ if config['txt'] == "true":
     f.write("")
     f.close()
 
-
 print("Generating glossary...\n")
-
-if config['docx']:
-    document = Document()
-
-    # adds title do document
-    document.add_heading(config['title'], level = 0)
-
-    document.add_paragraph() # blank line
 
 print("Searching for terms...")
 
@@ -102,10 +102,19 @@ for term in terms:
         if config['docx'] == "true":
             r = p.add_run("Not found.")
         if config['json'] == "true":
-            glossary[term] = "Not found"
+            glossary[term] = "Not found."
+        if config['csv'] == "true":
+            f = open(filename + ".csv", "a")
+            f.write("Not found.\n")
+            f.close()
+        if config['txt'] == "true":
+            f = open(filename + ".txt", "a")
+            f.write("Not found.\n")
+            f.close()
 
 print("\nGenerated glossary.")
 
+# writes header, footer and credits to DOCX document
 if config['docx'] == "true":
     print("\nWriting header...")
     # writes header loaded from configuration
@@ -131,15 +140,29 @@ if config['docx'] == "true":
     document.save(filename + ".docx")
     print("Saved document \"" + filename + ".docx\".")
 
+# Adds credits to glossary object and saves to JSON file
 if config['json'] == "true":
+    if config['credits'] == "true":
+        glossary['Credits'] = "Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
     print("\nSaving document \"" + filename + ".json\"...")
     f = open(filename + ".json", "w")
     f.write(json.dumps(glossary, indent = 4, sort_keys = True))
     f.close()
     print("Saved document \"" + filename + ".json\".")
 
+# Adds credits to CSV file and sends feedback to user
 if config['csv'] == "true":
+    if config['credits'] == "true":
+        f = open(filename + ".csv", "a")
+        f.write("Credits;Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)")
+        f.close()
     print("\nSaved document \"" + filename + ".csv\".")
 
+# Adds credits to TXT file and sends feedback to user
 if config['txt'] == "true":
+    if config['credits'] == "true":
+        f = open(filename + ".txt", "a")
+        f.write("Credits: Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)")
+        f.close()
     print("\nSaved document \"" + filename + ".txt\".")
+

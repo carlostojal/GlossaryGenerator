@@ -8,3 +8,4 @@ SMTP;The Simple Mail Transfer Protocol is a communication protocol for electroni
 Spooler;In computing, spooling is a specialized form of multi-programming for the purpose of copying data between different devices.
 Spyware;Spyware is a type of malware that aims to gather information about a person or organization, without their knowledge, and send such information to hack another entity without the consumer's consent.
 Telnet;Telnet is an application protocol used on the Internet or local area network to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.
+Credits;Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)
