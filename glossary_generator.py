@@ -62,9 +62,17 @@ for term in terms:
     print("\nSearching for term \"" + term + "\"...")
     response = requests.get("https://api.duckduckgo.com/?q=" + term + "&format=json&pretty=1") # request DuckDuckGo API to get term definition
     search = json.loads(response.text)
-    text = search['AbstractText']
-    if config['single_phrase'] == "true":
-        text = text.split(".")[0] + "."
+    raw_text = search['AbstractText']
+    raw_text = raw_text.split(".")
+    text = ""
+    x = 0
+    # add requested number of phrase, or the maximum available in the result
+    for phrase in raw_text:
+        if x < int(config['n_phrases']):
+            text += phrase
+            if x < len(raw_text) - 1: # to not write the point in the last phrase
+                text += "."
+        x += 1
     if config['docx'] == "true":
         p = document.add_paragraph(style = "List Bullet")
         r = p.add_run(term + ": ")

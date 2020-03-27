@@ -2,7 +2,7 @@
 	"title": "Sample Glossary",
 	"header_text": "Sample Header",
 	"footer_text": "Sample Footer",
-	"single_phrase": "true",
+	"n_phrases": "1",
 	"insert_term_image": "true",
 	"credits": "true",
 	"output_path": "output",
