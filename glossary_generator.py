@@ -39,20 +39,13 @@ if config['docx'] == "true":
     document.add_paragraph() # blank line
 
 if config['json'] == "true":
-    glossary = {}
-    f = open(filename + ".json", "w")
-    f.write("")
-    f.close()
+    glossary = {} # stores what will be outputted to the JSON file
 
 if config['csv'] == "true":
-    f = open(filename + ".csv", "w")
-    f.write("")
-    f.close()
+    csv = "" # stores what will be outputted to the CSV file
 
 if config['txt'] == "true":
-    f = open(filename + ".txt", "w")
-    f.write("")
-    f.close()
+    txt = "" # stores what will be outputted to the TXT file
 
 print("Generating glossary...\n")
 
@@ -78,13 +71,9 @@ for term in terms:
         r = p.add_run(term + ": ")
         r.bold = True # term is bold in document
     if config['csv'] == "true":
-        f = open(filename + ".csv", "a")
-        f.write(term + ";")
-        f.close()
+        csv += term + ";"
     if config['txt'] == "true":
-        f = open(filename + ".txt", "a")
-        f.write(term + ": ")
-        f.close()
+        txt += term + ": "
     if text != "": # if text was returned
         print("Found.")
         if config['docx'] == "true":
@@ -98,13 +87,9 @@ for term in terms:
         if config['json'] == "true":
             glossary[term] = text
         if config['csv'] == "true":
-            f = open(filename + ".csv", "a")
-            f.write(text + "\n")
-            f.close()
+            csv += text + "\n"
         if config['txt'] == "true":
-            f = open(filename + ".txt", "a")
-            f.write(text + "\n")
-            f.close()
+            txt += text + "\n"
     else:
         print("Not found.")
         if config['docx'] == "true":
@@ -112,10 +97,12 @@ for term in terms:
         if config['json'] == "true":
             glossary[term] = "Not found."
         if config['csv'] == "true":
+            csv += "Not found.\n"
             f = open(filename + ".csv", "a")
             f.write("Not found.\n")
             f.close()
         if config['txt'] == "true":
+            txt += "Not found.\n"
             f = open(filename + ".txt", "a")
             f.write("Not found.\n")
             f.close()
@@ -158,19 +145,23 @@ if config['json'] == "true":
     f.close()
     print("Saved document \"" + filename + ".json\".")
 
-# Adds credits to CSV file and sends feedback to user
+# Adds credits to the variable and saves to CSV file
 if config['csv'] == "true":
     if config['credits'] == "true":
-        f = open(filename + ".csv", "a")
-        f.write("Credits;Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)")
-        f.close()
+        csv += "Credits;Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
+    print("\nSaving document \"" + filename + ".csv\"...")
+    f = open(filename + ".csv", "w")
+    f.write(csv)
+    f.close()
     print("\nSaved document \"" + filename + ".csv\".")
 
-# Adds credits to TXT file and sends feedback to user
+# Adds credits to the variable and saves to TXT file
 if config['txt'] == "true":
     if config['credits'] == "true":
-        f = open(filename + ".txt", "a")
-        f.write("Credits: Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)")
-        f.close()
+        txt += "Credits: Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
+    print("\nSaving document \"" + filename + ".txt\"...")
+    f = open(filename + ".txt", "w")
+    f.write(txt)
+    f.close()
     print("\nSaved document \"" + filename + ".txt\".")
 
