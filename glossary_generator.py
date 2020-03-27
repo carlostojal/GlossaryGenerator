@@ -28,6 +28,7 @@ f.close()
 print("Loaded terms.\n")
 
 filename = config['output_path'] + "/" + config['filename']
+credits_text = "Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
 
 # creates files requested in configuration
 if config['docx'] == "true":
@@ -122,7 +123,7 @@ if config['docx'] == "true":
     if config['credits'] == "true": # append credits to footer if user chose that option
         footer = document.sections[0].footer
         p = footer.paragraphs[0]
-        p.text += "\n\nGenerated using GlossaryGenerator\n(https://github.com/carlostojal/GlossaryGenerator)"
+        p.text += "\n\n" + credits_text
 
     # saves document
     print("\nSaving document \"" + filename + ".docx\"...")
@@ -132,7 +133,7 @@ if config['docx'] == "true":
 # Adds credits to glossary object and saves to JSON file
 if config['json'] == "true":
     if config['credits'] == "true":
-        glossary['Credits'] = "Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
+        glossary['Credits'] = credits_text
     print("\nSaving document \"" + filename + ".json\"...")
     f = open(filename + ".json", "w")
     f.write(json.dumps(glossary, indent = 4, sort_keys = True))
@@ -142,7 +143,7 @@ if config['json'] == "true":
 # Adds credits to the variable and saves to CSV file
 if config['csv'] == "true":
     if config['credits'] == "true":
-        csv += "Credits;Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
+        csv += "Credits;" + credits_text
     print("\nSaving document \"" + filename + ".csv\"...")
     f = open(filename + ".csv", "w")
     f.write(csv)
@@ -152,10 +153,9 @@ if config['csv'] == "true":
 # Adds credits to the variable and saves to TXT file
 if config['txt'] == "true":
     if config['credits'] == "true":
-        txt += "Credits: Generated using GlossaryGenerator (https://github.com/carlostojal/GlossaryGenerator)"
+        txt += "Credits: " + credits_text
     print("\nSaving document \"" + filename + ".txt\"...")
     f = open(filename + ".txt", "w")
     f.write(txt)
     f.close()
     print("\nSaved document \"" + filename + ".txt\".")
-
