@@ -98,14 +98,8 @@ for term in terms:
             glossary[term] = "Not found."
         if config['csv'] == "true":
             csv += "Not found.\n"
-            f = open(filename + ".csv", "a")
-            f.write("Not found.\n")
-            f.close()
         if config['txt'] == "true":
             txt += "Not found.\n"
-            f = open(filename + ".txt", "a")
-            f.write("Not found.\n")
-            f.close()
 
 print("\nGenerated glossary.")
 
